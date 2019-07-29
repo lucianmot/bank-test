@@ -1,8 +1,9 @@
 class Account
-attr_reader :balance, :statement
+attr_reader :balance, :statement, :current_time
   def initialize
     @balance = 0
     @statement = { 1 => "date || credit || debit || balance" }
+    @current_time = Time.now.strftime("%d/%m/%Y")
   end
 
   def deposit(sum)
@@ -13,4 +14,7 @@ attr_reader :balance, :statement
     @balance -= sum
   end
 
+  def print_statement
+    puts @statement
+  end
 end

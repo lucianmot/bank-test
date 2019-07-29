@@ -25,5 +25,13 @@ describe Account do
     expect(account.statement[1]).to eq("date || credit || debit || balance")
   end
 
+  it "when you initialize an account it should have a current_time property" do
+    time = Time.now.strftime("%d/%m/%Y")
+    expect(account).to respond_to(:current_time)
+    expect(account.current_time).to eq time
+  end
 
+  xit "when you run print_statement command it should print your account statement" do
+    expect(account.print_statement).to contain("date || credit || debit || balance")
+  end
 end
