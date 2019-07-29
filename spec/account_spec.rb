@@ -2,8 +2,8 @@ require 'account'
 
 describe Account do
   subject(:account) {Account.new}
-  it "when you initialize an account you should have a balance" do
-    expect(account). to respond_to(:balance)
+  it "when you initialize an account it should have a balance property" do
+    expect(account).to respond_to(:balance)
   end
 
   it "when you initialize an account the balance should be 0" do
@@ -19,4 +19,11 @@ describe Account do
     expect(account.balance).to eq(1000)
     expect{account.withdrawal(500)}.to change{account.balance}.from(1000).to(500)
   end
+
+  it "when you initialize an account it should have a history property" do
+    expect(account).to respond_to(:statement)
+    expect(account.statement[1]).to eq("date || credit || debit || balance")
+  end
+
+
 end

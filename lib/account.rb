@@ -1,7 +1,8 @@
 class Account
-attr_reader :balance
+attr_reader :balance, :statement
   def initialize
     @balance = 0
+    @statement = { 1 => "date || credit || debit || balance" }
   end
 
   def deposit(sum)
@@ -11,4 +12,5 @@ attr_reader :balance
   def withdrawal(sum)
     @balance -= sum
   end
+
 end
