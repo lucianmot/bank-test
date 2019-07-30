@@ -15,6 +15,8 @@ attr_reader :balance, :statement, :current_time
   end
 
   def print_statement
-    puts @statement
+    @statement.each do |key, value|
+      puts value
+    end
   end
 end

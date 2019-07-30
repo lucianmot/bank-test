@@ -31,7 +31,7 @@ describe Account do
     expect(account.current_time).to eq time
   end
 
-  xit "when you run print_statement command it should print your account statement" do
-    expect(account.print_statement).to contain("date || credit || debit || balance")
+    xit "when you run print_statement command it should print your account statement" do
+    expect(account.print_statement).to eq("date || credit || debit || balance")
   end
 end
